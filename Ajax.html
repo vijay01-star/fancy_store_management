@@ -1,0 +1,233 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #demo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+#demo div {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#demo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+#demo div {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#demo img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  border: 1px solid black; /* Add black border */
+}
+
+#demo img:hover {
+  transform: scale(1.2); /* Increase size on hover */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay:hover {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.overlay img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+
+#demo img:hover {
+  transform: scale(1.2); /* Increase size on hover */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay:hover {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.overlay img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+  </style>
+</head>
+<body>
+
+<center><h2>KEC GALLERY</h2></center>
+
+<div id="demo">
+   
+</div>
+
+<button type="button" onclick="loadDoc()">Load Gallery</button>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const galleryData = JSON.parse(this.responseText);
+      
+      let galleryHtml = '';
+      galleryData.forEach(function(item) {
+        galleryHtml += `<div>
+        
+          <img src="${item.image_url}" alt="${item.name}">
+        </div>`;
+      });
+
+      document.getElementById("demo").innerHTML = galleryHtml;
+    }
+  };
+
+  xhttp.open("GET", "info.php", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('back.jpeg'); 
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #gallery-container {
+      text-align: center;
+      margin: 50px auto; 
+      max-width: 800px; 
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); 
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #demo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+
+    #demo div {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #demo img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+      border: 1px solid black; 
+      border-radius: 5px; 
+    }
+
+    #demo img:hover {
+      transform: scale(1.2); 
+    }
+    .return-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .return-home a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .return-home a:hover {
+            background-color: #555; 
+        }
+  </style>
+</head>
+<body>
+
+<div id="gallery-container">
+  <center><h2>KEC GALLERY</h2></center>
+  <center><h5>see more image click Load gallery</h5></center>
+
+  <div id="demo">
+   
+  </div>
+
+  <a href="#" onclick="loadDoc()">Load Gallery</a> 
+</div>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const galleryData = JSON.parse(this.responseText);
+      
+      let galleryHtml = '';
+      galleryData.forEach(function(item) {
+        galleryHtml += `<div>
+          <img src="${item.image_url}" alt="${item.name}">
+        </div>`;
+      });
+
+      document.getElementById("demo").innerHTML = galleryHtml;
+    }
+  };
+
+  xhttp.open("GET", "info.php", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>

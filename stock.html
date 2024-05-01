@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Fancy Store Management</title>
+  <link rel="stylesheet" href="sty.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #333;
+        text-align: center;
+    }
+    p {
+        color: #666;
+        line-height: 1.5;
+    }
+    .section-title {
+        color: #333;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        cursor: pointer; /* Add cursor pointer for better UX */
+    }
+    .section-title:hover {
+        color: #555; /* Darken the color on hover for more visual feedback */
+    }
+    .return-home {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .return-home a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .return-home a:hover {
+        background-color: #555; /* Darken the background color on hover */
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        $(".section-title").click(function() {
+            $(this).next("p").toggle("slow");
+            
+        });
+        $(".section-title").hover(function() {
+            $(this).css("cursor", "pointer");
+        });
+    });
+</script>
+<body>
+  <h1>About Us</h1>
+
+  <p>Welcome to Fancy Store Management!</p>
+  
+  <p>We are a team dedicated to providing top-notch management solutions for fancy stores. Our goal is to help store owners streamline their operations, manage their inventory efficiently, and enhance their overall customer experience.</p>
+
+  <p>With our innovative software solutions, we aim to revolutionize the way fancy stores operate, making management tasks easier and more effective.</p>
+
+  <p>Thank you for choosing Fancy Store Management for all your store management needs!</p>
+  
+  <p>Contact us at <a href="mailto:info@fancystoremanagement.com">info@fancystoremanagement.com</a> for any inquiries.</p>
+  
+  <button id="showMessageBtn">Show Message</button>
+  
+  <a href="index.html">Back to Home</a>
+
+  <script src="stock.js"></script>
+</body>
+</html>

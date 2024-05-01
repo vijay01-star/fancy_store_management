@@ -1,0 +1,354 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Your styles here */
+    .error {
+      color: red;
+    }
+  </style>
+  <h2>Login</h2>
+</head>
+<body>
+  <div class="login-container">
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <p id="nameError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <p id="emailError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+        <p id="phoneError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address">
+        <p id="addressError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+        <p id="cityError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state">
+        <p id="stateError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="zip">Pin Code:</label>
+        <input type="text" id="zip" name="zip">
+        <p id="zipError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country">
+        <p id="countryError" class="error"></p>
+      </div>
+
+      <button type="button" onclick="handleSubmit()">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const formData = {
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: '',
+      country: ''
+    };
+
+    const errors = {};
+
+    const validateForm = () => {
+      const name = formData.name;
+      const email = formData.email;
+      const phone = formData.phone;
+      const address = formData.address;
+      const city = formData.city;
+      const state = formData.state;
+      const zip = formData.zip;
+      const country = formData.country;
+
+      errors.name = (!name) ? 'Name must be filled out' : (!/^[a-zA-Z\s]*$/.test(name)) ? 'Name should contain only letters' : '';
+      errors.email = (!email) ? 'Email must be filled out' : (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) ? 'Invalid email address' : '';
+      errors.phone = (!phone) ? 'Phone must be filled out' : (!/^\d{10}$/.test(phone)) ? 'Phone number should contain exactly 10 numbers' : '';
+      errors.address = (!address) ? 'Address must be filled out' : '';
+      errors.city = (!city) ? 'City must be filled out' : '';
+      errors.state = (!state) ? 'State must be filled out' : '';
+      errors.zip = (!zip) ? 'Pin Code must be filled out' : (!/^\d{6}$/.test(zip)) ? 'Pin code should contain exactly 6 digits' : '';
+      errors.country = (!country) ? 'Country must be filled out' : '';
+
+      updateErrorMessages();
+
+      return !Object.values(errors).some(error => error);
+    };
+
+    const handleSubmit = () => {
+      for (const key in formData) {
+        formData[key] = document.getElementById(key).value;
+      }
+
+      if (validateForm()) {
+        alert('Form submitted successfully');
+      }
+    };
+
+    const updateErrorMessages = () => {
+      for (const key in errors) {
+        document.getElementById(`${key}Error`).innerText = errors[key];
+      }
+    };
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    
+    .error {
+      color: red;
+      
+    }
+    .login-container {
+      border: 2px solid skyblue;
+      padding: 30px; 
+      max-width: 400px; 
+      margin: auto; 
+      text-align: left;
+      border-radius: 20px; 
+    }
+
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    button {
+      background-color: red; 
+      color:black; 
+      padding: 10px 15px; 
+      border: none;
+      border-radius: 20px; 
+      cursor: pointer;
+    }
+
+    
+    button:hover {
+      background-color: green; 
+    }
+    label {
+      display: block; 
+      margin-bottom: 10px; /* Add some space below labels */
+    }
+
+    
+    input,
+    select,
+    textarea {
+      width: 100%; 
+      padding: 8px; 
+      box-sizing: border-box; 
+    }
+body {
+  background-image: url('homeimg.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+  </style>
+  <center>
+  <h2>Contact with us</h2>
+</head>
+<body>
+  
+  <div class="login-container">
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <p id="nameError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <p id="emailError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+        <p id="phoneError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address">
+        <p id="addressError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+        <p id="cityError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state">
+        <p id="stateError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="zip">Pin Code:</label>
+        <input type="text" id="zip" name="zip">
+        <p id="zipError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country">
+        <p id="countryError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="communicationChannel">Preferred Communication Channel:</label>
+        <select id="communicationChannel" name="communicationChannel">
+          <option value="">Select</option>
+          <option value="email">Email</option>
+          <option value="sms">SMS</option>
+        </select>
+        <p id="communicationChannelError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="productPreferences">Product Preferences:</label>
+        <textarea id="productPreferences" name="productPreferences"></textarea>
+        <p id="productPreferencesError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="satisfactionLevel">Satisfaction Level :</label>
+        <input type="text" id="satisfactionLevel" name="satisfactionLevel">
+        <p id="satisfactionLevelError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="suggestions">Suggestions for Improvement:</label>
+        <textarea id="suggestions" name="suggestions"></textarea>
+        <p id="suggestionsError" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="preferredFeedbackMethod">Preferred Feedback Method:</label>
+        <select id="preferredFeedbackMethod" name="preferredFeedbackMethod">
+          <option value="">Select</option>
+          <option value="survey">Survey</option>
+          <option value="email">Email</option>
+        </select>
+        <p id="preferredFeedbackMethodError" class="error"></p>
+      </div>
+
+      <button type="button" onclick="handleSubmit()">Submit</button>
+    </form></center>
+  </div>
+
+  <script>
+    const formData = {
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: '',
+      country: '',
+      communicationChannel: '',
+      productPreferences: '',
+      satisfactionLevel: '',
+      suggestions: '',
+      preferredFeedbackMethod: ''
+    };
+
+    const errors = {};
+
+    const validateForm = () => {
+      const name = formData.name;
+      const email = formData.email;
+      const phone = formData.phone;
+      const address = formData.address;
+      const city = formData.city;
+      const state = formData.state;
+      const zip = formData.zip;
+      const country = formData.country;
+      const communicationChannel = formData.communicationChannel;
+      const productPreferences = formData.productPreferences;
+      const satisfactionLevel = formData.satisfactionLevel;
+      const suggestions = formData.suggestions;
+      const preferredFeedbackMethod = formData.preferredFeedbackMethod;
+
+      errors.name = (!name) ? 'Name must be filled out' : (!/^[a-zA-Z\s]*$/.test(name)) ? 'Name should contain only letters' : '';
+      errors.email = (!email) ? 'Email must be filled out' : (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) ? 'Invalid email address' : '';
+      errors.phone = (!phone) ? 'Phone must be filled out' : (!/^\d{10}$/.test(phone)) ? 'Phone number should contain exactly 10 numbers' : '';
+      errors.address = (!address) ? 'Address must be filled out' : '';
+      errors.city = (!city) ? 'City must be filled out' : (!/^[a-zA-Z\s]+$/.test(city)) ? 'City should only contain letters' : '';
+      errors.state = (!state) ? 'State must be filled out' : (!/^[a-zA-Z\s]+$/.test(state)) ? 'State should only contain letters' : '';
+      errors.zip = (!zip) ? 'Pin Code must be filled out' : (!/^\d{6}$/.test(zip)) ? 'Pin code should contain exactly 6 digits' : '';
+      errors.country = (!country) ? 'Country must be filled out' : (!/^[a-zA-Z\s]+$/.test(country)) ? 'Country should only contain letters' : '';
+      errors.communicationChannel = (!communicationChannel) ? 'Preferred Communication Channel must be selected' : '';
+      errors.productPreferences = (!productPreferences) ? 'Product Preferences or Interests must be filled out' : '';
+      errors.satisfactionLevel = (!satisfactionLevel) ? 'Satisfaction Level must be filled out' : '';
+      errors.suggestions = (!suggestions) ? 'Suggestions must be filled out' : '';
+      errors.preferredFeedbackMethod = (!preferredFeedbackMethod) ? 'Preferred Feedback Method must be selected' : '';
+
+      updateErrorMessages();
+
+      return !Object.values(errors).some(error => error);
+    };
+
+    const handleSubmit = () => {
+      for (const key in formData) {
+        formData[key] = document.getElementById(key).value;
+      }
+
+      if (validateForm()) {
+  alert('Form submitted successfully');
+  window.location.href = 'fet.html'; // Replace 'home.html' with the actual URL of your home page
+}
+    };
+
+    const updateErrorMessages = () => {
+      for (const key in errors) {
+        document.getElementById(`${key}Error`).innerText = errors[key];
+      }
+    };
+  </script>
+</body>
+</html>
+
